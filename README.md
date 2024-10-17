@@ -25,3 +25,68 @@ The articles are written in Markdown, and include Front Matter. It is possible t
 You are not using Netlify CMS for this project - Netlify no longer supports their CMS.
 
 With that in mind, you can [watch this video](https://youtu.be/4wD00RT6d-g) to see how Kevin used Eleventy, Netlify, and Netlify CMS to create a full-featured blog site built entirely with static files.
+
+
+## My Projects
+
+### Poem Site
+
+The code is located in the `src` folder and the page is created in the `public` folder.
+
+The `settings.json` in the `.vscode` folder sets the `LiveServer` configuration to serve from the `public` folder and can be used to serve the built page.
+
+The build process includes minifying and autoprefixing of styles via the `postbuild` script, which runs automatically after a `build`.
+
+#### Installation
+
+**`npm install`**
+
+> Run this command once to install the needed node modules.
+
+#### Development Scripts
+
+**`npm start`**
+
+> This script runs 11ty with hot reload and serves at the URL localhost:8080. It will reload whenever there are HTML or Sass changes.
+
+**`npm run build`**
+
+> This script does a production build and includes minified, autoprefixed CSS. Use this as the "Publish command" if needed by hosting services such as Netlify.
+
+#### Resources
+
+<small>The starter was inspired by [11ty Sass Skeleton](https://github.com/5t3ph/11ty-sass-skeleton) by [@5t3ph](https://twitter.com/5t3ph)</small>
+
+#### Remembered
+
+This is a simple web page that displays the poem "Remembered" by Paul Laurence Dunbar. It features a styled layout, including an image of a dove that matches the essence of the poem. The design incorporates custom CSS and uses a Google font for typography. Additionally, there is a favicon image of a feather, capturing the aura of the literature.
+
+##### Features
+
+- **Poem**: The poem by Paul Laurence Dunbar is styled to emphasize its message.
+- **Image**: An image of a dove complements the theme of the poem.
+- **Responsive Design**: The page is designed to be responsive across different devices.
+
+##### Credits
+
+- **Poem**: "Remembered" by Paul Laurence Dunbar. [Source](https://www.public-domain-poetry.com/poems/remembered)
+
+---
+
+### Color Project - CodePen
+
+#### Color Project
+
+- **Link**: [View CodePen Project](https://codepen.io/LyssaMA/pen/GRVrVqo)
+- **Description**: This project demonstrates interactive design and functionality, showcasing my coding skills and creative approach.
+
+---
+
+### Design Project - Figma
+
+#### Figma Design
+
+- **Link**: [View Figma Design](https://www.figma.com/design/vI2aNCYYgSwbngzFxwxDNr/road-less-traveled?node-id=4-10&node-type=FRAME&t=dsNSXE52Iw3ynhsL-0)
+- **Description**: A design mockup showcasing a user interface concept, demonstrating my design capabilities and understanding of user experience.
+
+---

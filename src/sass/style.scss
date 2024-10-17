@@ -1,25 +1,56 @@
-@use "./abstracts/variables";
+
+@use "./abstracts/variables"; 
 @use "./base/reset";
 @use "./base/typography";
 
+// Font Face Declarations
+@font-face {
+  font-family: 'Epilogue';
+  src: url('./fonts/Epilogue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Rammetto One';
+  src: url('./fonts/RammettoOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-/* //////////////////////
-  General styling
-  /////////////////////// */
+// CSS Custom Properties
+:root {
+  --ff-body: 'Epilogue', sans-serif; // Set body font
+  --ff-heading: 'Rammetto One', cursive; // Set heading font
+}
+
+// Color Variables
+$primary-color: #343131;  // Dark Charcoal Gray
+$accent-color-1: #A04747; // Deep Red
+$accent-color-2: #D8A25E; // Warm Gold
+$accent-color-3: #EEDF7A; // Soft Yellow
+
+// Neutral and Contrast Colors
+$neutral-light: #f4f4f4;
+$neutral-dark: #1e1e1e;
+
+/* ///////////////////////
+General styling
+/////////////////////// */
 
 body {
-  font-family: var(--ff-body);
+  font-family: var(--ff-body); // Use custom property for body text
   font-size: var(--fs-400);
-  color: var(--clr-neutral-900);
+  color: $primary-color; // Updated to your dark charcoal color
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--ff-heading);
+  font-family: var(--ff-heading); // Use custom property for headings
   font-weight: var(--fw-900);
   line-height: 1.1;
+  color: $accent-color-1; // Updated to your deep red for headers
 }
 
 strong {
@@ -31,13 +62,13 @@ section,
   padding: min(10vh, 10em) 0;
 }
 
-/* //////////////////////
-  Utility Classes
-  /////////////////////// */
+/* ///////////////////////
+Utility Classes
+/////////////////////// */
 
 /* select all direct children of .flow
-   and add margin to the top for proper
-   spacing */
+ and add margin to the top for proper
+ spacing */
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1em);
@@ -47,6 +78,7 @@ section,
   margin-inline: auto;
   padding-inline: 1.5em;
   max-width: 72rem;
+  background-color: $accent-color-3; // Soft yellow for a section or container background
 }
 
 .container--narrow {
@@ -63,11 +95,13 @@ section,
   text-align: center;
 }
 
-/* typgraphy */
+/* ///////////////////////
+Typography
+/////////////////////// */
 
 .article-title,
 .section-title {
-  color: var(--clr-primary-500);
+  color: $accent-color-2; // Updated to warm gold for titles
 }
 
 .article-title {
@@ -78,12 +112,13 @@ section,
   font-size: var(--fs-600);
 }
 
-/* //////////////////////
-  Header
-  /////////////////////// */
+/* ///////////////////////
+Header
+/////////////////////// */
 
 .page-header {
   padding: 2em 0;
+  background-color: $primary-color; // Dark charcoal background for header
 }
 
 .page-header__content {
@@ -97,21 +132,21 @@ section,
 }
 
 .nav-list a {
-  color: var(--clr-neutral-900);
+  color: $accent-color-3; // Soft yellow for nav links
   text-decoration: none;
 }
 
 .nav-list a:focus,
 .nav-list a:hover {
-  color: var(--clr-primary-400);
+  color: $accent-color-1; // Deep red on hover
   text-decoration: underline;
 }
 
-/* //////////////////////
-  Footer
-  (make it sticky)
-  https://css-tricks.com/couple-takes-sticky-footer/
-  /////////////////////// */
+/* ///////////////////////
+Footer
+(make it sticky)
+https://css-tricks.com/couple-takes-sticky-footer/
+/////////////////////// */
 
 html,
 body {
@@ -135,14 +170,14 @@ header,
 .site-footer {
   --logo-color: currentColor;
   padding: 2em 0;
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-primary-500);
+  color: $neutral-light; // Light text
+  background-color: $accent-color-1; // Deep red for footer background
   text-align: center;
 }
 
-/* //////////////////////
-  Homepage
-  /////////////////////// */
+/* ///////////////////////
+Homepage
+/////////////////////// */
 
 .hero > div {
   display: grid;
@@ -154,7 +189,6 @@ header,
 
 .hero__image {
   width: 100%;
-  /* max-height: max(15rem, 40vh); */
   object-fit: cover;
 }
 
@@ -165,7 +199,7 @@ header,
 }
 
 .featured-articles {
-  background-color: var(--clr-primary-100);
+  background-color: $accent-color-3; // Soft yellow background for featured articles
 }
 
 .articles__list {
@@ -173,9 +207,9 @@ header,
   margin: 6rem 0;
 }
 
-/* //////////////////////
-  Individual article page
-  /////////////////////// */
+/* ///////////////////////
+Individual article page
+/////////////////////// */
 
 .main-article {
   margin-bottom: 3rem;
@@ -187,9 +221,9 @@ header,
   opacity: 0.9;
 }
 
-/* //////////////////////
-  Article snippets
-  /////////////////////// */
+/* ///////////////////////
+Article snippets
+/////////////////////// */
 
 .snippet {
   display: grid;
@@ -215,11 +249,11 @@ header,
 
 .snippet__meta {
   grid-area: meta;
-  color: var(--clr-neutral-400);
+  color: $neutral-dark;
 }
 
 .snippet__meta span {
-  color: var(--clr-neutral-900);
+  color: $primary-color;
 }
 
 .snippet .btn {
@@ -227,7 +261,7 @@ header,
 }
 
 .snippet__title {
-  color: var(--clr-neutral-900);
+  color: $primary-color;
   font-size: var(--fs-500);
 }
 
@@ -238,7 +272,7 @@ header,
 
 .snippet__title a:hover,
 .snippet__title a:focus {
-  color: var(--clr-primary-500);
+  color: $accent-color-2; // Warm gold on hover
 }
 
 @media (min-width: 45em) {
@@ -254,6 +288,10 @@ header,
   }
 }
 
+/* ///////////////////////
+Buttons
+/////////////////////// */
+
 .btn {
   cursor: pointer;
   text-decoration: none;
@@ -266,32 +304,32 @@ header,
 }
 
 .btn:focus {
-  outline: 0.125em solid var(--clr-primary-400);
+  outline: 0.125em solid $accent-color-1; // Deep red for focus state
   outline-offset: 0.25em;
 }
 
 .btn--primary {
-  background: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
+  background: $accent-color-2; // Warm gold for primary buttons
+  color: $neutral-dark; // Dark text on buttons
   font-weight: var(--fw-700);
-  border: 2px solid var(--clr-primary-400);
+  border: 2px solid $accent-color-2;
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
-  background: var(--clr-primary-500);
-  border-color: var(--clr-primary-500);
+  background: $accent-color-1; // Deep red on hover
+  border-color: $accent-color-1;
 }
 
 .btn--neutral {
-  background-color: var(--clr-neutral-100);
-  color: var(--clr-neutral-900);
+  background-color: $neutral-light;
+  color: $primary-color;
   font-weight: var(--fw-700);
-  border: 2px solid var(--clr-neutral-900);
+  border: 2px solid $primary-color;
 }
 
 .btn--neutral:hover,
 .btn--neutral:focus {
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-neutral-900);
+  color: $neutral-light;
+  background-color: $primary-color;
 }
