@@ -41,8 +41,23 @@ General styling
   font-size: calc(var(--fs-600) * 2.2);
   color: $accent-color-1; // Red
   text-align: center;
-  margin: 2em 0; 
+  margin: 2em 0;
 }
+
+.tp {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+@media (max-width: 30em) {
+  .btn {
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
 
 .hero__image {
   background-image: url('src/images/TP GOLD TRIM (4K x 4K).png');
@@ -100,7 +115,7 @@ strong {
 
 section,
 .section {
-  padding: min(10vh, 10em) 0;
+  padding: min(5vh, 5em) 0;
 }
 
 /* ///////////////////////
@@ -117,8 +132,8 @@ Utility Classes
   max-width: 100rem;
   background-color: $accent-color-3; // Light Orange 
   border: 3px solid $accent-color-1; // Red border
-  margin-bottom: 4em;
-  margin-top: 20em;
+  margin-bottom: 2em;
+  margin-top: 10em;
 
   &>* {
     margin-bottom: 4em;
@@ -146,7 +161,7 @@ Typography
 .article-title,
 .section-title {
   color: $accent-color-1; // Red
-  margin: 3em 0; 
+  margin: 3em 0;
 }
 
 .article-title {
@@ -389,7 +404,7 @@ Buttons
 
   .mp-projects__title {
     font-size: 2em;
-    margin: 2em 0; 
+    margin: 2em 0;
   }
 
   .mp-projects__paragraph {
@@ -397,14 +412,14 @@ Buttons
   }
 
   .mp-projects__button {
-    margin-top: 2em; 
+    margin-top: 2em;
   }
 }
 
 .project-item a {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .project-item a:hover {
-  text-decoration: none; 
+  text-decoration: none;
 }
