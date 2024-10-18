@@ -1,4 +1,3 @@
-
 @use "./abstracts/variables"; 
 @use "./base/reset";
 @use "./base/typography";
@@ -18,6 +17,10 @@
   font-style: normal;
 }
 
+.hero__image {
+  background-image: url('/assets/images/TP%20GOLD%20TRIM%20(4K%20x%204K).png');
+}
+
 // CSS Custom Properties
 :root {
   --ff-body: 'Epilogue', sans-serif; 
@@ -25,10 +28,10 @@
 }
 
 // Color Variables
-$primary-color: #343131;  // Dark Charcoal Gray
-$accent-color-1: #A04747; // Deep Red
-$accent-color-2: #D8A25E; // Warm Gold
-$accent-color-3: #EEDF7A; // Soft Yellow
+$primary-color: #343131;  // Charcoal Gray
+$accent-color-1: #A04747; // Red
+$accent-color-2: #D8A25E; // Gold
+$accent-color-3: #EEDF7A; // Yellow
 
 // Neutral and Contrast Colors
 $neutral-light: #f4f4f4;
@@ -39,18 +42,18 @@ General styling
 /////////////////////// */
 
 body {
-  font-family: var(--ff-body); // Custom property for body text
+  font-family: var(--ff-body); 
   font-size: var(--fs-400);
-  color: $primary-color; // Dark charcoal color
+  color: $primary-color; // Charcoal Gray
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--ff-heading); // Custom property for headings
+  font-family: var(--ff-heading);
   font-weight: var(--fw-900);
   line-height: 1.1;
-  color: $accent-color-1; // Deep red for headers
+  color: $accent-color-1; // Red
 }
 
 strong {
@@ -76,9 +79,8 @@ Utility Classes
 
 .container {
   margin-inline: auto;
-  padding-inline: 1.5em;
-  max-width: 72rem;
-  background-color: $accent-color-3; // Soft yellow for a section background
+  padding-inline: 2em 1.5em;
+  max-width: 100rem;
 }
 
 .container--narrow {
@@ -101,7 +103,8 @@ Typography
 
 .article-title,
 .section-title {
-  color: $accent-color-2; // Warm gold for titles
+  color: $accent-color-1; // Red
+  margin: 2em 0; 
 }
 
 .article-title {
@@ -118,7 +121,7 @@ Header
 
 .page-header {
   padding: 2em 0;
-  background-color: $primary-color; // Dark charcoal background for header
+  background-color: $primary-color; // Charcoal
 }
 
 .page-header__content {
@@ -132,19 +135,19 @@ Header
 }
 
 .nav-list a {
-  color: $accent-color-3; // Soft yellow for nav links
+  color: $accent-color-3; // Yellow
   text-decoration: none;
 }
 
 .nav-list a:focus,
 .nav-list a:hover {
-  color: $accent-color-1; // Deep red on hover
+  color: $accent-color-1; // Red
   text-decoration: underline;
 }
 
 /* ///////////////////////
 Footer
-(make it sticky)
+
 https://css-tricks.com/couple-takes-sticky-footer/
 /////////////////////// */
 
@@ -169,9 +172,9 @@ header,
 
 .site-footer {
   --logo-color: currentColor;
-  padding: 2em 0;
-  color: $neutral-light; // Light text
-  background-color: $accent-color-1; // Deep red for footer background
+  padding: 1em 0;
+  color: $neutral-light; 
+  background-color: $accent-color-1; // Red
   text-align: center;
 }
 
@@ -199,7 +202,14 @@ Homepage
 }
 
 .featured-articles {
-  background-color: $accent-color-3; // Soft yellow background 
+  background-color: $accent-color-3; // Yellow 
+  border: 2px solid $accent-color-1; // Red border
+  padding: 2em; 
+  margin-bottom: 2em; 
+}
+
+.section--buttons {
+  margin-bottom: 2em; 
 }
 
 .articles__list {
@@ -258,10 +268,11 @@ Article snippets
 
 .snippet .btn {
   grid-area: button;
+  margin-bottom: 2em; 
 }
 
 .snippet__title {
-  color: $primary-color;
+  color: $primary-color; // Charcoal 
   font-size: var(--fs-500);
 }
 
@@ -272,7 +283,7 @@ Article snippets
 
 .snippet__title a:hover,
 .snippet__title a:focus {
-  color: $accent-color-2; // Warm gold on hover
+  color: $accent-color-2; // Gold on hover
 }
 
 @media (min-width: 45em) {
@@ -304,20 +315,20 @@ Buttons
 }
 
 .btn:focus {
-  outline: 0.125em solid $accent-color-1; // Deep red for focus 
+  outline: 0.125em solid $accent-color-1; // Red
   outline-offset: 0.25em;
 }
 
 .btn--primary {
-  background: $accent-color-2; // Warm gold for primary buttons
-  color: $neutral-dark; // Dark text on buttons
+  background: $accent-color-2; // Gold
+  color: $neutral-dark; 
   font-weight: var(--fw-700);
   border: 2px solid $accent-color-2;
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
-  background: $accent-color-1; // Deep red hover
+  background: $accent-color-1; // Red
   border-color: $accent-color-1;
 }
 
@@ -332,4 +343,9 @@ Buttons
 .btn--neutral:focus {
   color: $neutral-light;
   background-color: $primary-color;
+}
+
+.about-me,
+.design-skills {
+  margin-bottom: 2em; 
 }

@@ -17,7 +17,7 @@
     "url": "git+https://github.com/rvccidmx/wdii-portfolio-starter.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alyssa Anderson <alyssam.anderson@yahoo.com> (https://github.com/RVCC-IDMX/cowsay-LyssaMA)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rvccidmx/wdii-portfolio-starter/issues"
@@ -31,7 +31,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.71.1"
+    "sass": "^1.80.2"
   },
   "dependencies": {
     "luxon": "^3.4.4"
