@@ -31,7 +31,7 @@ With that in mind, you can [watch this video](https://youtu.be/4wD00RT6d-g) to s
 
 ### Poem Site
 
-The code is located in the `src` folder and the page is created in the `public` folder.
+The code is located in the `src` folder, and the page is created in the `public` folder.
 
 The `settings.json` in the `.vscode` folder sets the `LiveServer` configuration to serve from the `public` folder and can be used to serve the built page.
 
@@ -57,14 +57,19 @@ The build process includes minifying and autoprefixing of styles via the `postbu
 
 <small>The starter was inspired by [11ty Sass Skeleton](https://github.com/5t3ph/11ty-sass-skeleton) by [@5t3ph](https://twitter.com/5t3ph)</small>
 
+---
+
 #### Remembered
 
 This is a simple web page that displays the poem "Remembered" by Paul Laurence Dunbar. It features a styled layout, including an image of a dove that matches the essence of the poem. The design incorporates custom CSS and uses a Google font for typography. Additionally, there is a favicon image of a feather, capturing the aura of the literature.
 
+![Dove Image](../images/Dove(cropped).jpg)
+![Feather Image](../images/Feather.jpg)
+
 ##### Features
 
 - **Poem**: The poem by Paul Laurence Dunbar is styled to emphasize its message.
-- **Image**: An image of a dove complements the theme of the poem.
+- **Images**: An image of a dove complements the theme of the poem, and a feather favicon is included.
 - **Responsive Design**: The page is designed to be responsive across different devices.
 
 ##### Credits
