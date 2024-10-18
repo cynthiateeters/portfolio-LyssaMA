@@ -18,7 +18,7 @@
 }
 
 .hero__image {
-  background-image: url('/assets/images/TP%20GOLD%20TRIM%20(4K%20x%204K).png');
+  background-image: url('src/images/TP GOLD TRIM (4K x 4K).png');
 }
 
 // CSS Custom Properties
@@ -44,7 +44,7 @@ General styling
 body {
   font-family: var(--ff-body); 
   font-size: var(--fs-400);
-  color: $primary-color; // Charcoal Gray
+  color: $primary-color; // Charcoal 
 }
 
 h1,
@@ -81,6 +81,8 @@ Utility Classes
   margin-inline: auto;
   padding-inline: 2em 1.5em;
   max-width: 100rem;
+  background-color: $accent-color-3; // Yellow 
+  border: 3px solid $accent-color-1; // Red border
 }
 
 .container--narrow {
@@ -203,13 +205,8 @@ Homepage
 
 .featured-articles {
   background-color: $accent-color-3; // Yellow 
-  border: 2px solid $accent-color-1; // Red border
+  border: 3px solid $accent-color-1; // Red border
   padding: 2em; 
-  margin-bottom: 2em; 
-}
-
-.section--buttons {
-  margin-bottom: 2em; 
 }
 
 .articles__list {
@@ -268,7 +265,7 @@ Article snippets
 
 .snippet .btn {
   grid-area: button;
-  margin-bottom: 2em; 
+  margin-bottom: 2em;
 }
 
 .snippet__title {
@@ -323,7 +320,7 @@ Buttons
   background: $accent-color-2; // Gold
   color: $neutral-dark; 
   font-weight: var(--fw-700);
-  border: 2px solid $accent-color-2;
+  border: 3px solid $accent-color-2;
 }
 
 .btn--primary:hover,
@@ -336,16 +333,11 @@ Buttons
   background-color: $neutral-light;
   color: $primary-color;
   font-weight: var(--fw-700);
-  border: 2px solid $primary-color;
+  border: 3px solid $primary-color;
 }
 
 .btn--neutral:hover,
 .btn--neutral:focus {
   color: $neutral-light;
   background-color: $primary-color;
-}
-
-.about-me,
-.design-skills {
-  margin-bottom: 2em; 
 }
