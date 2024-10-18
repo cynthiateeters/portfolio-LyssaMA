@@ -58,14 +58,6 @@ General styling
   }
 }
 
-
-.hero__image {
-  background-image: url('src/images/TP GOLD TRIM (4K x 4K).png');
-  width: 100%;
-  height: auto;
-  margin: 1.5em auto;
-}
-
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
@@ -116,6 +108,7 @@ strong {
 section,
 .section {
   padding: min(5vh, 5em) 0;
+  margin: 0 auto;
 }
 
 /* ///////////////////////
@@ -237,22 +230,37 @@ header,
 Homepage
 /////////////////////// */
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__content {
+  text-align: center;
+}
+
 .hero>div {
   display: grid;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 3em;
 }
 
 .hero__image {
   width: 100%;
+  max-width: 300px;
   height: auto;
+  margin: 1.5em auto;
 }
 
 @media (min-width: 45em) {
   .hero>div {
-    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero__image {
+    max-width: none;
   }
 }
 
@@ -352,6 +360,10 @@ Article snippets
 /* ///////////////////////
 Buttons
 /////////////////////// */
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .btn {
   cursor: pointer;
@@ -363,6 +375,7 @@ Buttons
   align-self: start;
   justify-self: start;
   margin-bottom: 4em;
+  align-self: flex-end;
 }
 
 .btn:focus {
@@ -390,7 +403,6 @@ Buttons
   font-weight: var(--fw-700);
   border: 3px solid $primary-color;
   margin-bottom: 4em;
-
 }
 
 .btn--neutral:hover,
@@ -400,15 +412,13 @@ Buttons
 }
 
 .projects {
-
-
   .mp-projects__title {
     font-size: 2em;
     margin: 2em 0;
   }
 
   .mp-projects__paragraph {
-    margin: 1.5em 0;
+    margin: 1.5
   }
 
   .mp-projects__button {
@@ -417,6 +427,7 @@ Buttons
 }
 
 .project-item a {
+  margin: 2em 0;
   text-decoration: none;
 }
 
