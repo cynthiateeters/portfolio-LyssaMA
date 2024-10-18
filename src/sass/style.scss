@@ -1,4 +1,4 @@
-@use "./abstracts/variables"; 
+@use "./abstracts/variables";
 @use "./base/reset";
 @use "./base/typography";
 
@@ -8,6 +8,7 @@
   src: url('./fonts/Epilogue-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap; 
 }
 
 @font-face {
@@ -15,36 +16,46 @@
   src: url('./fonts/RammettoOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-
-.hero__image {
-  background-image: url('src/images/TP GOLD TRIM (4K x 4K).png');
+  font-display: swap; 
 }
 
 // CSS Custom Properties
 :root {
-  --ff-body: 'Epilogue', sans-serif; 
-  --ff-heading: 'Rammetto One', cursive; 
+  --ff-body: 'Epilogue', sans-serif;
+  --ff-heading: 'Rammetto One', cursive;
 }
 
 // Color Variables
-$primary-color: #343131;  // Charcoal Gray
+$primary-color: #343131; // Charcoal Gray
 $accent-color-1: #A04747; // Red
-$accent-color-2: #D8A25E; // Gold
-$accent-color-3: #EEDF7A; // Yellow
-
-// Neutral and Contrast Colors
-$neutral-light: #f4f4f4;
+$accent-color-2: #c98839; // Gold
+$accent-color-3: #ffe4b3; // Light Orange 
+$neutral-light: #b1926f; // Light brown 
 $neutral-dark: #1e1e1e;
 
 /* ///////////////////////
 General styling
 /////////////////////// */
 
+.true-poet-title {
+  font-size: calc(var(--fs-600) * 2.2);
+  color: $accent-color-1; // Red
+  text-align: center;
+  margin: 2em 0;
+}
+
+.hero__image {
+  background-image: url('src/images/TP GOLD TRIM (4K x 4K).png');
+  width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+}
+
 body {
-  font-family: var(--ff-body); 
+  font-family: var(--ff-body);
   font-size: var(--fs-400);
-  color: $primary-color; // Charcoal 
+  color: $primary-color; // Charcoal
+  background-color: $neutral-light; // Light Brown
 }
 
 h1,
@@ -54,6 +65,33 @@ h3 {
   font-weight: var(--fw-900);
   line-height: 1.1;
   color: $accent-color-1; // Red
+  position: relative; 
+}
+
+/* Hover effect for titles */
+h1:after,
+h2:after,
+h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; 
+  height: 3px; 
+  width: 0;
+  background-color: $accent-color-2; // Gold
+  transition: width 0.3s ease; 
+}
+
+h1:hover:after,
+h2:hover:after,
+h3:hover:after {
+  width: 100%; 
+}
+
+h1:hover,
+h2:hover,
+h3:hover {
+  color: $accent-color-2; 
 }
 
 strong {
@@ -69,11 +107,7 @@ section,
 Utility Classes
 /////////////////////// */
 
-/* select all direct children of .flow
- and add margin to the top for proper
- spacing */
-
-.flow > *:where(:not(:first-child)) {
+.flow>*:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1em);
 }
 
@@ -81,9 +115,16 @@ Utility Classes
   margin-inline: auto;
   padding-inline: 2em 1.5em;
   max-width: 100rem;
-  background-color: $accent-color-3; // Yellow 
+  background-color: $accent-color-3; // Light Orange 
   border: 3px solid $accent-color-1; // Red border
+  margin-bottom: 4em;
+  margin-top: 4em;
+
+  &>* {
+    margin-bottom: 4em;
+  }
 }
+
 
 .container--narrow {
   max-width: 65rem;
@@ -106,7 +147,7 @@ Typography
 .article-title,
 .section-title {
   color: $accent-color-1; // Red
-  margin: 2em 0; 
+  margin: 2em 0;
 }
 
 .article-title {
@@ -137,7 +178,7 @@ Header
 }
 
 .nav-list a {
-  color: $accent-color-3; // Yellow
+  color: $accent-color-3; // Light Orange
   text-decoration: none;
 }
 
@@ -149,8 +190,6 @@ Header
 
 /* ///////////////////////
 Footer
-
-https://css-tricks.com/couple-takes-sticky-footer/
 /////////////////////// */
 
 html,
@@ -163,7 +202,7 @@ body {
   flex-direction: column;
 }
 
-body > main {
+body>main {
   flex: 1 0 auto;
 }
 
@@ -175,7 +214,7 @@ header,
 .site-footer {
   --logo-color: currentColor;
   padding: 1em 0;
-  color: $neutral-light; 
+  color: $neutral-light;
   background-color: $accent-color-1; // Red
   text-align: center;
 }
@@ -184,7 +223,7 @@ header,
 Homepage
 /////////////////////// */
 
-.hero > div {
+.hero>div {
   display: grid;
   grid-auto-flow: row;
   grid-auto-columns: 1fr;
@@ -194,19 +233,19 @@ Homepage
 
 .hero__image {
   width: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 @media (min-width: 45em) {
-  .hero > div {
+  .hero>div {
     grid-auto-flow: column;
   }
 }
 
 .featured-articles {
-  background-color: $accent-color-3; // Yellow 
+  background-color: $accent-color-3; // Light Orange 
   border: 3px solid $accent-color-1; // Red border
-  padding: 2em; 
+  padding: 2em;
 }
 
 .articles__list {
@@ -309,6 +348,7 @@ Buttons
   border-radius: 0.25em;
   align-self: start;
   justify-self: start;
+  margin-bottom: 4em;
 }
 
 .btn:focus {
@@ -318,9 +358,10 @@ Buttons
 
 .btn--primary {
   background: $accent-color-2; // Gold
-  color: $neutral-dark; 
+  color: $neutral-dark;
   font-weight: var(--fw-700);
   border: 3px solid $accent-color-2;
+  margin-bottom: 4em;
 }
 
 .btn--primary:hover,
@@ -334,6 +375,8 @@ Buttons
   color: $primary-color;
   font-weight: var(--fw-700);
   border: 3px solid $primary-color;
+  margin-bottom: 4em;
+
 }
 
 .btn--neutral:hover,
