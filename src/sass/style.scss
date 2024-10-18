@@ -41,7 +41,7 @@ General styling
   font-size: calc(var(--fs-600) * 2.2);
   color: $accent-color-1; // Red
   text-align: center;
-  margin: 2em 0; // Adjust as needed for spacing around the title
+  margin: 2em 0; 
 }
 
 .hero__image {
@@ -146,7 +146,7 @@ Typography
 .article-title,
 .section-title {
   color: $accent-color-1; // Red
-  margin: 3em 0; // Equal spacing above and below titles
+  margin: 3em 0; 
 }
 
 .article-title {
