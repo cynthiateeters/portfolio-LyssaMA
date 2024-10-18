@@ -8,7 +8,7 @@
   src: url('./fonts/Epilogue-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; 
+  font-display: swap;
 }
 
 @font-face {
@@ -16,7 +16,7 @@
   src: url('./fonts/RammettoOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; 
+  font-display: swap;
 }
 
 // CSS Custom Properties
@@ -41,7 +41,7 @@ General styling
   font-size: calc(var(--fs-600) * 2.2);
   color: $accent-color-1; // Red
   text-align: center;
-  margin: 2em 0;
+  margin: 2em 0; // Adjust as needed for spacing around the title
 }
 
 .hero__image {
@@ -65,7 +65,7 @@ h3 {
   font-weight: var(--fw-900);
   line-height: 1.1;
   color: $accent-color-1; // Red
-  position: relative; 
+  position: relative;
 }
 
 /* Hover effect for titles */
@@ -75,23 +75,23 @@ h3:after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -5px; 
-  height: 3px; 
+  bottom: -5px;
+  height: 3px;
   width: 0;
   background-color: $accent-color-2; // Gold
-  transition: width 0.3s ease; 
+  transition: width 0.3s ease;
 }
 
 h1:hover:after,
 h2:hover:after,
 h3:hover:after {
-  width: 100%; 
+  width: 100%;
 }
 
 h1:hover,
 h2:hover,
 h3:hover {
-  color: $accent-color-2; 
+  color: $accent-color-2;
 }
 
 strong {
@@ -118,13 +118,12 @@ Utility Classes
   background-color: $accent-color-3; // Light Orange 
   border: 3px solid $accent-color-1; // Red border
   margin-bottom: 4em;
-  margin-top: 4em;
+  margin-top: 20em;
 
   &>* {
     margin-bottom: 4em;
   }
 }
-
 
 .container--narrow {
   max-width: 65rem;
@@ -147,7 +146,7 @@ Typography
 .article-title,
 .section-title {
   color: $accent-color-1; // Red
-  margin: 2em 0;
+  margin: 3em 0; // Equal spacing above and below titles
 }
 
 .article-title {
@@ -214,7 +213,7 @@ header,
 .site-footer {
   --logo-color: currentColor;
   padding: 1em 0;
-  color: $neutral-light;
+  color: $accent-color-3;
   background-color: $accent-color-1; // Red
   text-align: center;
 }
@@ -383,4 +382,29 @@ Buttons
 .btn--neutral:focus {
   color: $neutral-light;
   background-color: $primary-color;
+}
+
+.projects {
+
+
+  .mp-projects__title {
+    font-size: 2em;
+    margin: 2em 0; 
+  }
+
+  .mp-projects__paragraph {
+    margin: 1.5em 0;
+  }
+
+  .mp-projects__button {
+    margin-top: 2em; 
+  }
+}
+
+.project-item a {
+  text-decoration: none; 
+}
+
+.project-item a:hover {
+  text-decoration: none; 
 }
