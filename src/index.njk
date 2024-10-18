@@ -6,25 +6,55 @@ layout: 'base.njk'
 <section class="hero">
   <div class="container flow">
     <div class="hero__content flow">
-      <h1 class="section-title">Welcome to my portfolio page!</h1>
-      <p>I use this space to document my adventures in front-end development.</p>
-      <p>Below are some of my work.</p>
+      <h1 class="section-title">Welcome to my portfolio!</h1>
+      <p>I am using this space to document my projects in web development.</p>
+      <p>Below is some of my work.</p>
       <div class="flex-group">
         <a href="#featured-articles" class="btn btn--primary">Featured work</a>
         <a href="./portfolio" class="btn btn--neutral">Most recent work</a>
       </div>
     </div>
     <div>
-      <img src="/assets/portfolio/welcome-809-510x510.jpg" alt="" class="hero__image">
+      <img src="/assets/portfolio/welcome-809-510x510.jpg" alt="Portfolio welcome image" class="hero__image">
     </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container flow">
+    <h2 class="section-title text-center">About Me</h2>
+    <p class="text-center">I am Alyssa Anderson, a website developer who specializes in creating visually impactful designs that elevate your brand. I offer a comprehensive range of services, including logo design, business cards, letterheads, newsletters, and website development. My focus is on delivering tailored solutions that effectively communicate your message and engage your audience.</p>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="container flow">
+    <h2 class="section-title text-center">My Skills</h2>
+    <ul class="skills__list">
+      <li><strong>Coding Languages:</strong> Java, JavaScript, CSS</li>
+      <li><strong>Frameworks/Tools:</strong> Bootstrap, Canva, CodePen, Penpot</li>
+      <li><strong>Development Tools:</strong> VSCode, NetBeans</li>
+      <li><strong>Design Tools:</strong> Adobe Illustrator, Adobe Photoshop, Adobe InDesign, Figma</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="container flow">
+    <h2 class="section-title text-center">My Projects</h2>
+    <ul class="projects__list">
+      <li><strong>Poem Site:</strong> A simple, elegant web page showcasing the poem "Remembered" by Paul Laurence Dunbar. It features responsive design, a dove image, and custom typography to match the poem’s tone. <a href="https://github.com/yourusername/poem-site">GitHub Repo</a></li>
+      <li><strong>Color Project:</strong> A web-based color project demonstrating my proficiency in CSS color manipulation and dynamic web design. <a href="https://github.com/yourusername/color-project">GitHub Repo</a></li>
+      <li><strong>Figma Design:</strong> A conceptual web design project created in Figma, inspired by the theme "The Road Less Traveled." <a href="https://www.figma.com/design/vI2aNCYYgSwbngzFxwxDNr/road-less-traveled?node-id=4-10&node-type=FRAME&t=dsNSXE52Iw3ynhsL-0">View on Figma</a></li>
+      <li><strong>CodePen Creations:</strong> Interactive web projects built on CodePen, showcasing my frontend development skills. <a href="https://codepen.io/LyssaMA/pen/GRVrVqo">View on CodePen</a></li>
+    </ul>
   </div>
 </section>
 
 <section id="featured-articles" class="featured-articles">
   <div class="container flow">
-    <h2 class="section-title text-center ">Featured work</h2>
-    <p class="text-center">Here is a sample of work which I feel gives you a good idea of what this site is all
-      about.</p>
+    <h2 class="section-title text-center">Additional Work</h2>
+    <p class="text-center">Here is a sample of work which I created in Figma and other platforms.</p>
     <ul role="list" class="articles__list flow">
       {%- for post in collections.featured | reverse -%}
       {% include 'article-snippet.njk' %}

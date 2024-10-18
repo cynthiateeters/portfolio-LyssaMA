@@ -20,8 +20,8 @@
 
 // CSS Custom Properties
 :root {
-  --ff-body: 'Epilogue', sans-serif; // Set body font
-  --ff-heading: 'Rammetto One', cursive; // Set heading font
+  --ff-body: 'Epilogue', sans-serif; 
+  --ff-heading: 'Rammetto One', cursive; 
 }
 
 // Color Variables
@@ -39,18 +39,18 @@ General styling
 /////////////////////// */
 
 body {
-  font-family: var(--ff-body); // Use custom property for body text
+  font-family: var(--ff-body); // Custom property for body text
   font-size: var(--fs-400);
-  color: $primary-color; // Updated to your dark charcoal color
+  color: $primary-color; // Dark charcoal color
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--ff-heading); // Use custom property for headings
+  font-family: var(--ff-heading); // Custom property for headings
   font-weight: var(--fw-900);
   line-height: 1.1;
-  color: $accent-color-1; // Updated to your deep red for headers
+  color: $accent-color-1; // Deep red for headers
 }
 
 strong {
@@ -78,7 +78,7 @@ Utility Classes
   margin-inline: auto;
   padding-inline: 1.5em;
   max-width: 72rem;
-  background-color: $accent-color-3; // Soft yellow for a section or container background
+  background-color: $accent-color-3; // Soft yellow for a section background
 }
 
 .container--narrow {
@@ -101,7 +101,7 @@ Typography
 
 .article-title,
 .section-title {
-  color: $accent-color-2; // Updated to warm gold for titles
+  color: $accent-color-2; // Warm gold for titles
 }
 
 .article-title {
@@ -199,7 +199,7 @@ Homepage
 }
 
 .featured-articles {
-  background-color: $accent-color-3; // Soft yellow background for featured articles
+  background-color: $accent-color-3; // Soft yellow background 
 }
 
 .articles__list {
@@ -304,7 +304,7 @@ Buttons
 }
 
 .btn:focus {
-  outline: 0.125em solid $accent-color-1; // Deep red for focus state
+  outline: 0.125em solid $accent-color-1; // Deep red for focus 
   outline-offset: 0.25em;
 }
 
@@ -317,7 +317,7 @@ Buttons
 
 .btn--primary:hover,
 .btn--primary:focus {
-  background: $accent-color-1; // Deep red on hover
+  background: $accent-color-1; // Deep red hover
   border-color: $accent-color-1;
 }
 
