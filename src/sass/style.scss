@@ -5,7 +5,7 @@
 // Font Face Declarations
 @font-face {
   font-family: 'Epilogue';
-  src: url('./fonts/Epilogue-Regular.ttf') format('truetype');
+  src: url('./src/fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,11 +13,12 @@
 
 @font-face {
   font-family: 'Rammetto One';
-  src: url('./fonts/RammettoOne-Regular.ttf') format('truetype');
+  src: url('./src/fonts/RammettoOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 
 // CSS Custom Properties
 :root {
@@ -31,7 +32,9 @@ $accent-color-1: #A04747; // Red
 $accent-color-2: #c98839; // Gold
 $accent-color-3: #ffe4b3; // Light Orange 
 $neutral-light: #b1926f; // Light brown 
-$neutral-dark: #1e1e1e;
+$neutral-dark: #1e1e1e; // Almost black
+$medium-brown: #8f5022; // Saddle Brown
+$dark-brown: #3b2e2e; // Dark Brown
 
 /* ///////////////////////
 General styling
@@ -39,7 +42,7 @@ General styling
 
 .true-poet-title {
   font-size: calc(var(--fs-600) * 2.2);
-  color: $accent-color-1; // Red
+  color: $dark-brown; 
   text-align: center;
   margin: 2em 0;
 }
@@ -68,47 +71,93 @@ body {
 h1,
 h2,
 h3 {
+  color: $dark-brown; 
   font-family: var(--ff-heading);
   font-weight: var(--fw-900);
-  line-height: 1.1;
-  color: $accent-color-1; // Red
+  line-height: 1.5;
   position: relative;
+  text-decoration: underline;
 }
 
-/* Hover effect for titles */
+.container p {
+  font-size: calc(var(--fs-400) * 1.25);
+}
+
+.skills__list li {
+  font-size: calc(var(--fs-400) * 1.25);
+}
+
+.mp-projects__paragraph {
+  font-size: calc(var(--fs-400) * 1.25);
+}
+
+/* Titles styles */
+h1,
+h2,
+h3,
+.article-title,
+.section-title,
+.mp-projects__title,
+.poem-site-title,
+.color-project-title,
+.design-project-title {
+  color: $dark-brown; 
+  position: relative; 
+  text-decoration: none; 
+}
+
+/* Underline effect */
 h1:after,
 h2:after,
-h3:after {
+h3:after,
+.article-title:after,
+.section-title:after,
+.mp-projects__title:after,
+.poem-site-title:after,
+.color-project-title:after,
+.design-project-title:after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -5px;
   height: 3px;
   width: 0;
-  background-color: $accent-color-2; // Gold
+  background-color: $accent-color-2; 
   transition: width 0.3s ease;
 }
 
+/* Hover effects */
 h1:hover:after,
 h2:hover:after,
-h3:hover:after {
-  width: 100%;
+h3:hover:after,
+.article-title:hover:after,
+.section-title:hover:after,
+.mp-projects__title:hover:after,
+.poem-site-title:hover:after,
+.color-project-title:hover:after,
+.design-project-title:hover:after {
+  width: 100%; 
 }
 
 h1:hover,
 h2:hover,
-h3:hover {
-  color: $accent-color-2;
+h3:hover,
+.article-title:hover,
+.section-title:hover,
+.mp-projects__title:hover,
+.poem-site-title:hover,
+.color-project-title:hover,
+.design-project-title:hover {
+  color: $accent-color-2; 
 }
 
 strong {
   font-weight: var(--fw-700);
 }
 
-section,
-.section {
-  padding: min(5vh, 5em) 0;
-  margin: 0 auto;
+section {
+  padding: 1em;
+  margin: 0;
 }
 
 /* ///////////////////////
@@ -121,20 +170,19 @@ Utility Classes
 
 .container {
   margin-inline: auto;
-  padding-inline: 2em 1.5em;
+  padding-inline: 4em 4em;
   max-width: 100rem;
-  background-color: $accent-color-3; // Light Orange 
-  border: 3px solid $accent-color-1; // Red border
+  background-color: $accent-color-3; 
+  border: 3px solid $accent-color-2; 
   margin-bottom: 2em;
-  margin-top: 10em;
+  margin-top: 5em;
 
   &>* {
-    margin-bottom: 4em;
+    margin-bottom: 5em;
   }
 }
-
 .container--narrow {
-  max-width: 65rem;
+  max-width: 85rem;
 }
 
 .flex-group {
@@ -147,23 +195,42 @@ Utility Classes
   text-align: center;
 }
 
+.inner-container {
+  background-color: #8f5022; 
+  padding: 2em; 
+  margin-bottom: 3em; 
+  border-radius: 0.5em;
+}
+
+
 /* ///////////////////////
 Typography
 /////////////////////// */
 
 .article-title,
 .section-title {
-  color: $accent-color-1; // Red
+  color: $dark-brown; 
   margin: 3em 0;
+  font-size: 2.5em;
+  transition: color 0.3s ease; 
 }
 
-.article-title {
-  font-size: var(--fs-700);
+.article-title:hover,
+.section-title:hover {
+  color: $accent-color-2; 
 }
 
-.section-title {
-  font-size: var(--fs-600);
+/* Projects Titles */
+.mp-projects__title {
+  font-size: 2.5em;
+  margin: 2em 0;
+  color: $dark-brown; 
 }
+
+.mp-projects__title:hover {
+  color: $accent-color-2; 
+}
+
 
 /* ///////////////////////
 Header
@@ -192,7 +259,7 @@ Header
 .nav-list a:focus,
 .nav-list a:hover {
   color: $accent-color-1; // Red
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ///////////////////////
@@ -222,8 +289,18 @@ header,
   --logo-color: currentColor;
   padding: 1em 0;
   color: $accent-color-3;
-  background-color: $accent-color-1; // Red
+  background-color: $dark-brown; 
   text-align: center;
+}
+
+/* Footer Link Styles */
+.footer-link {
+  color: $accent-color-2; 
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: none;
 }
 
 /* ///////////////////////
@@ -264,9 +341,14 @@ Homepage
   }
 }
 
+.hero__image:hover {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  filter: brightness(1.2);
+}
+
 .featured-articles {
-  background-color: $accent-color-3; // Light Orange 
-  border: 3px solid $accent-color-1; // Red border
+  background-color: $accent-color-3;
+  border: 3px solid $accent-color-2; 
   padding: 2em;
 }
 
@@ -341,7 +423,8 @@ Article snippets
 
 .snippet__title a:hover,
 .snippet__title a:focus {
-  color: $accent-color-2; // Gold on hover
+  color: $accent-color-2; // Gold 
+  text-decoration: none;
 }
 
 @media (min-width: 45em) {
@@ -379,23 +462,25 @@ Buttons
 }
 
 .btn:focus {
-  outline: 0.125em solid $accent-color-1; // Red
+  outline: 0.125em solid $accent-color-2; 
   outline-offset: 0.25em;
 }
 
+
 .btn--primary {
-  background: $accent-color-2; // Gold
-  color: $neutral-dark;
+  background: $accent-color-2; 
+  color: $dark-brown;
   font-weight: var(--fw-700);
-  border: 3px solid $accent-color-2;
+  border: 3px solid $accent-color-2; 
   margin-bottom: 4em;
 }
-
 .btn--primary:hover,
 .btn--primary:focus {
-  background: $accent-color-1; // Red
-  border-color: $accent-color-1;
+  background: $dark-brown; 
+  border-color: $dark-brown; 
+  color: $accent-color-2; 
 }
+
 
 .btn--neutral {
   background-color: $neutral-light;
@@ -413,18 +498,20 @@ Buttons
 
 .projects {
   .mp-projects__title {
+    color: $accent-color-3;
     font-size: 2em;
     margin: 2em 0;
   }
-
+  
   .mp-projects__paragraph {
-    margin: 1.5
+    margin: 1.5em;
   }
 
   .mp-projects__button {
     margin-top: 2em;
   }
 }
+
 
 .project-item a {
   margin: 2em 0;
@@ -433,4 +520,14 @@ Buttons
 
 .project-item a:hover {
   text-decoration: none;
+}
+
+.footer-link {
+  color: #fcba6a;
+  ;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
