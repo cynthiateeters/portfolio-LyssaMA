@@ -5,20 +5,17 @@
 // Font Face Declarations
 @font-face {
   font-family: 'Epilogue';
-  src: url('./src/fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: 'Rammetto One';
-  src: url('./src/fonts/RammettoOne-Regular.ttf') format('truetype');
+  src: url('/fonts/RammettoOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
-
 
 // CSS Custom Properties
 :root {
@@ -29,28 +26,61 @@
 // Color Variables
 $primary-color: #343131; // Charcoal Gray
 $accent-color-1: #A04747; // Red
-$accent-color-2: #c98839; // Gold
+$accent-color-2: #d49241; // Gold
 $accent-color-3: #ffe4b3; // Light Orange 
 $neutral-light: #b1926f; // Light brown 
 $neutral-dark: #1e1e1e; // Almost black
-$medium-brown: #8f5022; // Saddle Brown
+$medium-brown: #b26834; // Saddle Brown
 $dark-brown: #3b2e2e; // Dark Brown
 
 /* ///////////////////////
 General styling
 /////////////////////// */
 
-.true-poet-title {
-  font-size: calc(var(--fs-600) * 2.2);
-  color: $dark-brown; 
+.page-header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero__image {
   text-align: center;
   margin: 2em 0;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centers the items horizontally */
+  text-align: center;
+  /* Ensures text is centered */
+}
+
+.header-logo {
+  width: 600px;
+  height: auto;
+}
+
+.true-poet-title {
+  text-align: center;
+  font-size: 3em;
+  white-space: nowrap;
+  margin-top: 2em;
 }
 
 .tp {
   display: block;
   text-align: center;
-  margin: 1em 0;
+  margin: 2em 0;
 }
 
 @media (max-width: 30em) {
@@ -71,7 +101,7 @@ body {
 h1,
 h2,
 h3 {
-  color: $dark-brown; 
+  color: $dark-brown;
   font-family: var(--ff-heading);
   font-weight: var(--fw-900);
   line-height: 1.5;
@@ -80,15 +110,15 @@ h3 {
 }
 
 .container p {
-  font-size: calc(var(--fs-400) * 1.25);
+  font-size: calc(var(--fs-400) * 1.5);
 }
 
 .skills__list li {
-  font-size: calc(var(--fs-400) * 1.25);
+  font-size: calc(var(--fs-400) * 1.5);
 }
 
 .mp-projects__paragraph {
-  font-size: calc(var(--fs-400) * 1.25);
+  font-size: calc(var(--fs-400) * 1.5);
 }
 
 /* Titles styles */
@@ -101,9 +131,9 @@ h3,
 .poem-site-title,
 .color-project-title,
 .design-project-title {
-  color: $dark-brown; 
-  position: relative; 
-  text-decoration: none; 
+  color: $dark-brown;
+  position: relative;
+  text-decoration: none;
 }
 
 /* Underline effect */
@@ -122,7 +152,7 @@ h3:after,
   bottom: -5px;
   height: 3px;
   width: 0;
-  background-color: $accent-color-2; 
+  background-color: $accent-color-2;
   transition: width 0.3s ease;
 }
 
@@ -136,7 +166,7 @@ h3:hover:after,
 .poem-site-title:hover:after,
 .color-project-title:hover:after,
 .design-project-title:hover:after {
-  width: 100%; 
+  width: 100%;
 }
 
 h1:hover,
@@ -148,7 +178,7 @@ h3:hover,
 .poem-site-title:hover,
 .color-project-title:hover,
 .design-project-title:hover {
-  color: $accent-color-2; 
+  color: $accent-color-2;
 }
 
 strong {
@@ -164,23 +194,35 @@ section {
 Utility Classes
 /////////////////////// */
 
+/* ///////////////////////
+Utility Classes
+/////////////////////// */
+
+.flex-group {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 1em;
+}
+
 .flow>*:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1em);
 }
 
 .container {
   margin-inline: auto;
-  padding-inline: 4em 4em;
+  padding-inline: 2em;
   max-width: 100rem;
-  background-color: $accent-color-3; 
-  border: 3px solid $accent-color-2; 
-  margin-bottom: 2em;
-  margin-top: 5em;
-
-  &>* {
-    margin-bottom: 5em;
-  }
+  background-color: $accent-color-3;
+  border: 4px solid $accent-color-2;
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
+
+.container>* {
+  margin-bottom: 4em;
+}
+
 .container--narrow {
   max-width: 85rem;
 }
@@ -196,12 +238,11 @@ Utility Classes
 }
 
 .inner-container {
-  background-color: #8f5022; 
-  padding: 2em; 
-  margin-bottom: 3em; 
+  background-color: #b26834;
+  padding: 2em;
+  margin-bottom: 3em;
   border-radius: 0.5em;
 }
-
 
 /* ///////////////////////
 Typography
@@ -209,41 +250,43 @@ Typography
 
 .article-title,
 .section-title {
-  color: $dark-brown; 
+  color: $dark-brown;
   margin: 3em 0;
   font-size: 2.5em;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
 
 .article-title:hover,
 .section-title:hover {
-  color: $accent-color-2; 
+  color: $accent-color-2;
 }
 
 /* Projects Titles */
 .mp-projects__title {
   font-size: 2.5em;
   margin: 2em 0;
-  color: $dark-brown; 
+  color: $dark-brown;
 }
 
 .mp-projects__title:hover {
-  color: $accent-color-2; 
+  color: $accent-color-2;
 }
-
 
 /* ///////////////////////
 Header
 /////////////////////// */
 
 .page-header {
-  padding: 2em 0;
+  padding: 1.5em 0;
   background-color: $primary-color; // Charcoal
 }
 
 .page-header__content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-list {
@@ -289,13 +332,13 @@ header,
   --logo-color: currentColor;
   padding: 1em 0;
   color: $accent-color-3;
-  background-color: $dark-brown; 
+  background-color: $dark-brown;
   text-align: center;
 }
 
 /* Footer Link Styles */
 .footer-link {
-  color: $accent-color-2; 
+  color: $accent-color-2;
   text-decoration: none;
 }
 
@@ -348,7 +391,7 @@ Homepage
 
 .featured-articles {
   background-color: $accent-color-3;
-  border: 3px solid $accent-color-2; 
+  border: 4px solid $accent-color-2;
   padding: 2em;
 }
 
@@ -462,31 +505,30 @@ Buttons
 }
 
 .btn:focus {
-  outline: 0.125em solid $accent-color-2; 
+  outline: 0.125em solid $accent-color-2;
   outline-offset: 0.25em;
 }
 
-
 .btn--primary {
-  background: $accent-color-2; 
+  background: $accent-color-2;
   color: $dark-brown;
   font-weight: var(--fw-700);
-  border: 3px solid $accent-color-2; 
+  border: 4px solid $accent-color-2;
   margin-bottom: 4em;
 }
+
 .btn--primary:hover,
 .btn--primary:focus {
-  background: $dark-brown; 
-  border-color: $dark-brown; 
-  color: $accent-color-2; 
+  background: $dark-brown;
+  border-color: $dark-brown;
+  color: $accent-color-2;
 }
-
 
 .btn--neutral {
   background-color: $neutral-light;
   color: $primary-color;
   font-weight: var(--fw-700);
-  border: 3px solid $primary-color;
+  border: 4px solid $primary-color;
   margin-bottom: 4em;
 }
 
@@ -502,7 +544,7 @@ Buttons
     font-size: 2em;
     margin: 2em 0;
   }
-  
+
   .mp-projects__paragraph {
     margin: 1.5em;
   }
@@ -511,7 +553,6 @@ Buttons
     margin-top: 2em;
   }
 }
-
 
 .project-item a {
   margin: 2em 0;
@@ -524,10 +565,14 @@ Buttons
 
 .footer-link {
   color: #fcba6a;
-  ;
   text-decoration: none;
 }
 
 .footer-link:hover {
   text-decoration: underline;
+}
+
+.site-footer img.logo {
+  vertical-align: middle;
+  margin-left: 0.5rem;
 }
