@@ -487,6 +487,7 @@ Buttons
   justify-content: flex-end;
 }
 
+/* Existing Button Styles */
 .btn {
   cursor: pointer;
   text-decoration: none;
@@ -534,6 +535,29 @@ Buttons
   background-color: $primary-color; // Charcoal Gray
 }
 
+.btn--resume {
+  background: $accent-color-2; // Gold 
+  color: $dark-brown; // Dark Brown 
+  font-weight: var(--fw-700);
+  border: 4px solid $accent-color-2; // Gold 
+  margin: 4em 0;
+}
+
+.btn--resume:hover,
+.btn--resume:focus {
+  background: $dark-brown; 
+  border-color: $dark-brown; 
+  color: $accent-color-2; 
+}
+
+.flex-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
 .projects {
   .mp-projects__title {
     color: $accent-color-3; // Light Orange
@@ -558,6 +582,8 @@ Buttons
 .project-item a:hover {
   text-decoration: none;
 }
+
+
 
 .footer-link {
   color: $accent-color-2; // Gold
