@@ -94,7 +94,7 @@ General styling
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
-  color: $primary-color; // Charcoal
+  color: $primary-color; // Charcoal Gray
   background-color: $neutral-light; // Light Brown
 }
 
@@ -152,7 +152,7 @@ h3:after,
   bottom: -5px;
   height: 3px;
   width: 0;
-  background-color: $accent-color-2;
+  background-color: $accent-color-2; // Gold
   transition: width 0.3s ease;
 }
 
@@ -178,7 +178,7 @@ h3:hover,
 .poem-site-title:hover,
 .color-project-title:hover,
 .design-project-title:hover {
-  color: $accent-color-2;
+  color: $accent-color-2; // Gold
 }
 
 strong {
@@ -189,10 +189,6 @@ section {
   padding: 1em;
   margin: 0;
 }
-
-/* ///////////////////////
-Utility Classes
-/////////////////////// */
 
 /* ///////////////////////
 Utility Classes
@@ -213,8 +209,8 @@ Utility Classes
   margin-inline: auto;
   padding-inline: 2em;
   max-width: 100rem;
-  background-color: $accent-color-3;
-  border: 4px solid $accent-color-2;
+  background-color: $accent-color-3; // Light Orange
+  border: 4px solid $accent-color-2; // Gold
   margin-bottom: 1em;
   margin-top: 2em;
 }
@@ -238,7 +234,7 @@ Utility Classes
 }
 
 .inner-container {
-  background-color: #b26834;
+  background-color: $medium-brown; // Saddle Brown
   padding: 2em;
   margin-bottom: 3em;
   border-radius: 0.5em;
@@ -258,7 +254,7 @@ Typography
 
 .article-title:hover,
 .section-title:hover {
-  color: $accent-color-2;
+  color: $accent-color-2; // Gold
 }
 
 /* Projects Titles */
@@ -269,7 +265,7 @@ Typography
 }
 
 .mp-projects__title:hover {
-  color: $accent-color-2;
+  color: $accent-color-2; // Gold
 }
 
 /* ///////////////////////
@@ -278,7 +274,7 @@ Header
 
 .page-header {
   padding: 1.5em 0;
-  background-color: $primary-color; // Charcoal
+  background-color: $primary-color; // Charcoal Gray
 }
 
 .page-header__content {
@@ -331,19 +327,19 @@ header,
 .site-footer {
   --logo-color: currentColor;
   padding: 1em 0;
-  color: $accent-color-3;
-  background-color: $dark-brown;
+  color: $accent-color-3; // Light Orange
+  background-color: $dark-brown; // Dark Brown
   text-align: center;
 }
 
 /* Footer Link Styles */
 .footer-link {
-  color: $accent-color-2;
+  color: $accent-color-2; // Gold
   text-decoration: none;
 }
 
 .footer-link:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* ///////////////////////
@@ -390,8 +386,8 @@ Homepage
 }
 
 .featured-articles {
-  background-color: $accent-color-3;
-  border: 4px solid $accent-color-2;
+  background-color: $accent-color-3; // Light Orange
+  border: 4px solid $accent-color-2; // Gold
   padding: 2em;
 }
 
@@ -442,11 +438,11 @@ Article snippets
 
 .snippet__meta {
   grid-area: meta;
-  color: $neutral-dark;
+  color: $neutral-dark; // Almost black
 }
 
 .snippet__meta span {
-  color: $primary-color;
+  color: $primary-color; // Charcoal Gray
 }
 
 .snippet .btn {
@@ -455,7 +451,7 @@ Article snippets
 }
 
 .snippet__title {
-  color: $primary-color; // Charcoal 
+  color: $primary-color; // Charcoal Gray
   font-size: var(--fs-500);
 }
 
@@ -466,7 +462,7 @@ Article snippets
 
 .snippet__title a:hover,
 .snippet__title a:focus {
-  color: $accent-color-2; // Gold 
+  color: $accent-color-2; // Gold
   text-decoration: none;
 }
 
@@ -505,42 +501,42 @@ Buttons
 }
 
 .btn:focus {
-  outline: 0.125em solid $accent-color-2;
+  outline: 0.125em solid $accent-color-2; // Gold
   outline-offset: 0.25em;
 }
 
 .btn--primary {
-  background: $accent-color-2;
-  color: $dark-brown;
+  background: $accent-color-2; // Gold
+  color: $dark-brown; // Dark Brown
   font-weight: var(--fw-700);
-  border: 4px solid $accent-color-2;
+  border: 4px solid $accent-color-2; // Gold
   margin-bottom: 4em;
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
-  background: $dark-brown;
-  border-color: $dark-brown;
-  color: $accent-color-2;
+  background: $dark-brown; // Dark Brown
+  border-color: $dark-brown; // Dark Brown
+  color: $accent-color-2; // Gold
 }
 
 .btn--neutral {
-  background-color: $neutral-light;
-  color: $primary-color;
+  background-color: $neutral-light; // Light brown 
+  color: $primary-color; // Charcoal Gray
   font-weight: var(--fw-700);
-  border: 4px solid $primary-color;
+  border: 4px solid $primary-color; // Charcoal Gray
   margin-bottom: 4em;
 }
 
 .btn--neutral:hover,
 .btn--neutral:focus {
-  color: $neutral-light;
-  background-color: $primary-color;
+  color: $neutral-light; // Light brown
+  background-color: $primary-color; // Charcoal Gray
 }
 
 .projects {
   .mp-projects__title {
-    color: $accent-color-3;
+    color: $accent-color-3; // Light Orange
     font-size: 2em;
     margin: 2em 0;
   }
@@ -564,7 +560,7 @@ Buttons
 }
 
 .footer-link {
-  color: #fcba6a;
+  color: $accent-color-2; // Gold
   text-decoration: none;
 }
 
