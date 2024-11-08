@@ -24,7 +24,8 @@
 }
 
 // Color Variables
-$primary-color: #343131; // Charcoal Gray
+$primary-color: hsl(0, 3%, 20%); // Charcoal Gray
+$primary-dark: hsl(0, 3%, 6%); // Charcoal Gray
 $accent-color-1: #A04747; // Red
 $accent-color-2: #d49241; // Gold
 $accent-color-3: #ffe4b3; // Light Orange
@@ -600,24 +601,6 @@ Buttons
   margin-left: 0.5rem;
 }
 
-// * {
-//   outline: 2px solid black;
-// }
-
-// main {
-//   max-width: 80%;
-//   margin-inline: auto;
-// }
-
-// section {
-//   max-width: 1500px !important;
-// }
-
-// * {
-//   overflow: scroll;
-//   overflow: visible;
-// }
-
 @media screen and (width <=1024px) {
 
   .container,
@@ -638,5 +621,9 @@ Buttons
   .about p.text-center {
     text-align: left;
     padding-inline: 2vw;
+  }
+
+  body {
+    color: $primary-dark;
   }
 }
