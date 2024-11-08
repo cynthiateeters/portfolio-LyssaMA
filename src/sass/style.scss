@@ -27,8 +27,8 @@
 $primary-color: #343131; // Charcoal Gray
 $accent-color-1: #A04747; // Red
 $accent-color-2: #d49241; // Gold
-$accent-color-3: #ffe4b3; // Light Orange 
-$neutral-light: #b1926f; // Light brown 
+$accent-color-3: #ffe4b3; // Light Orange
+$neutral-light: #b1926f; // Light brown
 $neutral-dark: #1e1e1e; // Almost black
 $medium-brown: #b26834; // Saddle Brown
 $dark-brown: #3b2e2e; // Dark Brown
@@ -202,7 +202,7 @@ Utility Classes
   margin-top: 1em;
 }
 
-.flow>*:where(:not(:first-child)) {
+.flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1em);
 }
 
@@ -216,7 +216,7 @@ Utility Classes
   margin-top: 2em;
 }
 
-.container>* {
+.container > * {
   margin-bottom: 4em;
 }
 
@@ -316,7 +316,7 @@ body {
   flex-direction: column;
 }
 
-body>main {
+body > main {
   flex: 1 0 auto;
 }
 
@@ -357,7 +357,7 @@ Homepage
   text-align: center;
 }
 
-.hero>div {
+.hero > div {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -372,7 +372,7 @@ Homepage
 }
 
 @media (min-width: 45em) {
-  .hero>div {
+  .hero > div {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -523,7 +523,7 @@ Buttons
 }
 
 .btn--neutral {
-  background-color: $neutral-light; // Light brown 
+  background-color: $neutral-light; // Light brown
   color: $primary-color; // Charcoal Gray
   font-weight: var(--fw-700);
   border: 4px solid $primary-color; // Charcoal Gray
@@ -537,18 +537,18 @@ Buttons
 }
 
 .btn--resume {
-  background: $accent-color-2; // Gold 
-  color: $dark-brown; // Dark Brown 
+  background: $accent-color-2; // Gold
+  color: $dark-brown; // Dark Brown
   font-weight: var(--fw-700);
-  border: 4px solid $accent-color-2; // Gold 
+  border: 4px solid $accent-color-2; // Gold
   margin: 4em 0;
 }
 
 .btn--resume:hover,
 .btn--resume:focus {
-  background: $dark-brown; 
-  border-color: $dark-brown; 
-  color: $accent-color-2; 
+  background: $dark-brown;
+  border-color: $dark-brown;
+  color: $accent-color-2;
 }
 
 .flex-group {
@@ -598,4 +598,35 @@ Buttons
 .site-footer img.logo {
   vertical-align: middle;
   margin-left: 0.5rem;
+}
+
+// * {
+//   outline: 2px solid black;
+// }
+
+// main {
+//   max-width: 80%;
+//   margin-inline: auto;
+// }
+
+// section {
+//   max-width: 1500px !important;
+// }
+
+// * {
+//   overflow: scroll;
+//   overflow: visible;
+// }
+
+@media screen and (width <=600px) {
+
+  .container,
+  section {
+    padding-inline: 0;
+  }
+
+  .inner-container {
+    padding-inline: 2vw;
+    border-radius: 0;
+  }
 }
